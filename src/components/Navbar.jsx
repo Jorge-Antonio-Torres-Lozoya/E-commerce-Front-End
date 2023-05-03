@@ -3,8 +3,8 @@ import '../styles/navbar.css'
 const Navbar = () => {
   return (
     <nav className='navbar navbar-expand-lg navbar-color '>
-      <div className='container-fluid'>
-        <a className='navbar-brand text-white fs-2' href='#'>
+      <div className='container-fluid '>
+        <a className='navbar-brand text-white fs-2 py-1 mx-2' href='#'>
           Tonal
         </a>
         <button
@@ -22,7 +22,7 @@ const Navbar = () => {
           <ul className='navbar-nav me-auto mb-2 mb-lg-0'>
             <li className='nav-item dropdown'>
               <a
-                className='nav-link dropdown-toggle text-white mx-3'
+                className='nav-link dropdown-toggle text-white mx-4'
                 href='#'
                 role='button'
                 data-bs-toggle='dropdown'
@@ -52,16 +52,18 @@ const Navbar = () => {
               </ul>
             </li>
           </ul>
-          <form className='d-flex' role='search'>
-            <input
-              className='form-control me-2'
-              type='search'
-              placeholder='Search'
-              aria-label='Search'
-            />
-            <button className='btn btn-outline-success' type='submit'>
-              Search
-            </button>
+          <form className='d-flex ' role='search'>
+            <div className='input-group-search'>
+              <input
+                className=' me-2 px-5 input-search'
+                type='search'
+                placeholder='Busca tu producto'
+                aria-label='Search'
+              />
+              <button className='px-1 py-1 fa fa-search icon-search' type='submit' />
+              {/* <i className='fa fa-search icon-search' /> */}
+            </div>
+
           </form>
           <ul className='tx-none mx-4 my-auto navbar-nav gap-5'>
             <li className='nav-item '>
