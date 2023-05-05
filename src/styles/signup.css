@@ -1,26 +1,59 @@
 .container {
     margin-top: 50px;
+    display: flex;
 
 }
 
-.inicio {
+.iniciar {
     text-align: start;
     padding-bottom: 30px;
 }
 
 .cuadro-1 {
-    margin-top: 200px;
-    margin-left: 120px;
-    width: 450px;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 120px;
+    margin-left: 120px; 
+    width: 500px;
     height: 400px;
     border-color: #aaaaaa;
-    border-width: 4px;
+    border-width: 2px;
     border-style: solid;
-    border-radius: 20px;
+    
     padding: 20px;
     
 }
 
-.btn-primary {
-    padding: 15px;
+.log {
+    padding: 10px;
+    margin: 18px;
+    text-align: center;
+    background-color: #E04B1E;
 }
+
+.cuadro-2 {
+    display: inline-block;
+    flex-direction: row;
+    text-align: center;
+    margin-top: 120px;
+    width: 500px;
+    height: 400px;
+    background-color: #E04B1E;
+    
+    
+}
+
+.registro {
+    color: #fff;
+    text-align: center;
+    font-size: 60px;
+}
+
+.reg-boton {
+    background-color: #fff;
+    padding: 10px;
+    margin: 18px;
+    color: black;
+    margin-top: 40px;
+}
+
