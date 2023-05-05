@@ -13,6 +13,7 @@
 }
 
 .container-left {
+    background-color: white;
     border: 1px solid #C0B2B2;
     width: 50%;
     justify-content: center;
