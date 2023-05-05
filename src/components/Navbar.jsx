@@ -55,22 +55,21 @@ const Navbar = () => {
           <form className='d-flex ' role='search'>
             <div className='input-group-search'>
               <input
-                className=' me-2 px-5 input-search'
+                className=' me-4 px-5 input-search'
                 type='search'
                 placeholder='Busca tu producto'
                 aria-label='Search'
               />
               <button className='px-1 py-1 fa fa-search icon-search' type='submit' />
-              {/* <i className='fa fa-search icon-search' /> */}
             </div>
 
           </form>
-          <ul className='tx-none mx-4 my-auto navbar-nav gap-5'>
+          <ul className='tx-none mx-4 my-auto navbar-nav gap-4'>
             <li className='nav-item '>
-              <i className='fa-solid fa-cart-shopping fa-2x ' />
+              <button type='button' className='fa-solid fa-cart-shopping fa-2x icons ' />
             </li>
             <li>
-              <i className='fa-solid fa-user fa-2x' />
+              <button type='button' className='fa-solid fa-user fa-2x icons' />
             </li>
           </ul>
         </div>

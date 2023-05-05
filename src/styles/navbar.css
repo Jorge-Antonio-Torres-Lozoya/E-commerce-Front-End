@@ -29,9 +29,15 @@
 
 .icon-search {
     position: absolute;
-    right: 1.5em;
+    right: 2.2em;
     top: 3px;
     color: #C0B2B2;
+    background-color: transparent;
+    border: 0;
+}
+
+.icons{
+    color:white;
     background-color: transparent;
     border: 0;
 }
