@@ -1,10 +1,13 @@
-import Login from '../pages/Login'
+
+import Home from '../pages/Home'
+import LoginSignUp from '../pages/LoginSignUp'
 import { Route, Routes } from 'react-router-dom'
 
 const RoutesIndex = () => {
   return (
     <Routes>
-      <Route path='/login' element={<Login />} />
+      <Route index path='/' element={<Home />} />
+      <Route path='/login' element={<LoginSignUp />} />
     </Routes>
 
   )

@@ -1,0 +1,15 @@
+.btn-cart-plus{
+   border-radius: 50px;
+    background:  #E04B1E;
+    border: 0;
+    color: white;
+
+}
+.container-body-card{
+    flex-direction: column;
+}
+
+.container-price{
+    justify-content: space-between;
+    align-items: center;
+}

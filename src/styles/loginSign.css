@@ -1,0 +1,223 @@
+.Container {
+ background-color: #ffffff;
+ border-radius: 10px;
+ box-shadow: 0 10px 20px rgba(0, 0, 0, 0.333), 0 10px 10px rgba(78, 78, 78, 0.244);
+ position: relative;
+ overflow: hidden;
+ width: 600px;
+ min-height: 400px;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+}
+
+/*   -----------------         */
+
+.Centro {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ height: 100vh;
+ background-color: #ffffff;
+}
+
+.SignUpContainer {
+ display: flex;
+ flex-direction: column;
+ position: absolute;
+ top: 0;
+ height: 100%;
+ transition: all 0.6s ease-in-out;
+ left: -5px;
+ width: 50%;
+ opacity: 0;
+}
+.SignUpContainer-active{
+ transform: translateX(100%);
+ opacity: 1;
+ z-index: 1;
+}
+
+.SignInContainer {
+ position: absolute;
+ height: 100%;
+ left: 5px;
+ width: 50%;
+ transition: all 0.6s ease-in-out;
+}
+.SignInContainer-active {
+ transform: translateX(100%);
+}
+
+.Form {
+ background-color: #ffffff;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ flex-direction: column;
+ padding: 0 50px;
+ height: 100%;
+ text-align: center;
+}
+
+.Title {
+ font-weight: bold;
+ margin: 0;
+
+}
+.Button {
+ border-radius: 50px;
+ border: 1px solid #E04B1E;
+ background-color: #E04B1E;
+ color: #ffffff;
+ font-size: 12px;
+ font-weight: bold;
+ padding: 10px 45px;
+ letter-spacing: .9px;
+ text-transform: uppercase;
+ transition: transform 80ms ease-in;
+}
+.Button:active {
+ transform: scale(.97);
+ background-color: #E04B1E;
+ border: 1px solid #E04B1E;
+}
+.Button:focus {
+ outline: none;
+ 
+}
+
+.GhostButton:hover{
+ box-shadow: 1PX -5px 15px 5px rgba(249, 239, 130, 0.400), 0 10px 10px rgba(231, 251, 82, 0.400);
+}
+
+.GhostButton {
+ background-color: transparent;
+ border-color: #ffffff;
+}
+
+.Anchor {
+ color: #333;
+ font-size: 16px;
+ text-decoration: none;
+ margin: 15px 0;
+}
+
+.OverlayContainer {
+ position: absolute;
+ top: 0;
+ left: 50%;
+ width: 50%;
+ height: 100%;
+ overflow: hidden;
+ transition: transform 0.6s ease-in-out;
+ z-index: 1;
+ 
+}
+.OverlayContainer-left {
+ transform: translateX(-100%);
+ 
+}
+
+.Overlay {
+
+ background: linear-gradient(#E04B1E 20%,#fa8e00);
+
+ color: #ffffff;
+ position: relative;
+ left: -100%;
+ height: 100%;
+ width: 200%;
+ transform: translateX(0);
+ transition: transform 0.6s ease-in-out;
+}
+
+.Overlay-left {
+ transform: translateX(50%);
+ min-width: 20%;
+}
+
+.OverlayPanel {
+
+ position: absolute;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ flex-direction: column;
+ padding: 10px 20px;
+ text-align: center;
+ top: 0;
+ height: 100%;
+ width: 50%;
+ transform: translateX(0);
+ transition: transform 0.6s ease-in-out;
+}
+
+.LeftOverlayPanel {
+ transform: translateX(-20%);
+
+ 
+}
+
+.LeftOverlayPanel-active {
+ transform: translateX(0);
+ min-width: 20%;
+
+}
+
+.RightOverlayPanel {
+ right: 0%;
+ 
+ transform: translateX(0);
+}
+
+.RightOverlayPanel-active {
+ transform: translateX(0);
+
+}
+
+.Paragraph {
+ font-size: 15px;
+ font-weight: 100;
+ line-height: 20px;
+ letter-spacing: 0.5px;
+ margin: 20px 0 30px;
+}
+@media (max-width: 700px)  {
+ #centro{
+  height: 100vh;
+ }
+  #con {
+ 
+  min-width: 650px;
+  transform: rotate(90deg);
+  min-height: 350px;
+ 
+  }
+  #overC{
+   left: 40%;
+   width: 60%;
+  }
+ #SignUp{
+  left: -20px;
+
+ }
+ #SignIn{
+  transform: rotate(-90deg);
+  left: -40px;
+ }
+ #form{
+  transform: rotate(-90deg);
+ }
+ #panelDerecho{
+  transform: rotate(-90deg);
+ }
+ #panelIzquierdo{
+  left: 10%;
+  transform: rotate(-90deg);
+ }
+ .rol{
+  width: 227px;
+ }
+ }
