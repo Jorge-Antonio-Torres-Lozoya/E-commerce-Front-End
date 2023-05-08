@@ -10,7 +10,7 @@ import VisibilityOff from '@mui/icons-material/VisibilityOff'
 import LockOutlined from '@mui/icons-material/LockOutlined'
 import MenuItem from '@mui/material/MenuItem'
 import FormControl from '@mui/material/FormControl'
-import InputBase from '@mui/material/InputBase'
+// import InputBase from '@mui/material/InputBase'
 import '../styles/loginSign.css'
 
 const LoginSignUp = () => {
@@ -34,9 +34,9 @@ const LoginSignUp = () => {
     setSignIn(false)
   }
 
-  const toggle = (val) => {
-    setSignIn(val)
-  }
+  // const toggle = (val) => {
+  //   setSignIn(val)
+  // }
   const inputStyle = {
     '& label': {
       color: '#E04B1E'
@@ -80,7 +80,7 @@ const LoginSignUp = () => {
       <div id='con' className='Container '>
         <div id='SignUp' className={`SignUpContainer ${!signIn ? 'SignUpContainer-active' : ''}`}>
           <form id='form' className='Form '>
-            <h1 className='Title'>Registrate</h1>
+            <h1 className='Title mb-2'>Registrate</h1>
             <CssTextField
               id='custom-css-outlined-input' label='Nombre' variant='outlined' margin='normal' size='small' InputProps={{
                 startAdornment: (
@@ -118,7 +118,7 @@ const LoginSignUp = () => {
                       edge='end'
                       sx={{ color: '#009C78' }}
                     >
-                      {showPassword ? <VisibilityOff /> : <Visibility />}
+                      {showPassword ? <Visibility /> : <VisibilityOff />}
                     </IconButton>
                   </InputAdornment>
                 ),
@@ -154,7 +154,7 @@ const LoginSignUp = () => {
         </div>
         <div id='SignIn' className={` SignInContainer ${!signIn ? 'SignInContainer-active' : ''}`}>
           <form className='Form'>
-            <h1 className='Title'>¡Bievenido!</h1>
+            <h1 className='Title mb-2'>¡Bievenido!</h1>
             <CssTextField
               label='Correo electrónico'
               variant='outlined'
@@ -193,18 +193,18 @@ const LoginSignUp = () => {
               sx={inputPassword}
             />
 
-            <button className='Button'>Inicia seción</button>
+            <button className='Button mt-3'>Inicia sesión</button>
           </form>
         </div>
-        <div id='overC' className={`OverlayContainer ${!signIn ? 'OverlayContainer-left' : ''}`}>
+        <div id='overC ' className={`OverlayContainer ${!signIn ? 'OverlayContainer-left' : ''}`}>
           <div id='OverlayQI' className={`Overlay ${!signIn ? 'Overlay-left' : ''}`}>
             <div id='panelIzquierdo' className={`OverlayPanel LeftOverlayPanel ${!signIn ? 'LeftOverlayPanel-active' : ''}`}>
-              <h1 className='Title'>Incia seción</h1>
+              <h1 className='Title'>Incia sesión</h1>
               <p className='Paragraph'>
                 Para que sigas disfrutando de todos nuestros productos
               </p>
-              <button className='Button GhostButton ButtonrH' onClick={handleSignInClick}>
-                Iniciar SecióN
+              <button className='Button  GhostButton ButtonrH' onClick={handleSignInClick}>
+                Iniciar sesión
               </button>
             </div>
             <div id='panelDerecho' className={`OverlayPanel RightOverlayPanel ${signIn ? 'RightOverlayPanel-active' : ''}`}>
