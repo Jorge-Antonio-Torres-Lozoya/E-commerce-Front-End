@@ -1,0 +1,43 @@
+.navbar-color {
+    background-color: #E04B1E;
+    color: white;
+}
+
+.tx-none {
+    list-style: none;
+}
+
+.input-group-search {
+    position: relative;
+    
+}
+
+.input-search {
+    padding-right: 2em;
+    border-radius: 50px;
+    border: 0;
+    height: 2em;
+}
+
+.input-search::placeholder {
+    color: #C0B2B2;
+}
+
+.input-search:focus {
+    border: 0;
+}
+
+.icon-search {
+    position: absolute;
+    right: 2.2em;
+    top: 3px;
+    color: #C0B2B2;
+    background-color: transparent;
+    border: 0;
+}
+
+.icons{
+    color:white;
+    background-color: transparent;
+    border: 0;
+}

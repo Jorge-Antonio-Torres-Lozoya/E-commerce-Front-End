@@ -1,0 +1,91 @@
+
+.container-root {
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+
+}
+
+.container-divs {
+    width: 70%;
+    height: 50%;
+    justify-content: center;
+
+}
+
+.container-left {
+    background-color: white;
+    border: 1px solid #C0B2B2;
+    width: 50%;
+    justify-content: center;
+}
+
+.container-right {
+    background-color: #E04B1E;
+    width: 50%;
+    border: 1px solid #C0B2B2;
+    justify-content: center;
+
+}
+
+.form-login {
+    width: 75%;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+}
+
+.input-email,
+.input-password {
+    border-radius: 50px;
+    border: 1px solid #C0B2B2;
+    height: 2.3em;
+
+}
+
+.container-form {
+    flex-direction: column;
+    gap: 20px;
+}
+
+.btn-login {
+    background-color: #E04B1E;
+    color: white;
+}
+
+.input-email::placeholder,
+.input-password::placeholder {
+    color: #C0B2B2;
+    font-size: 14px;
+}
+
+.container-signup {
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    width: 75%;
+    height: 100%;
+
+}
+.btn-signup {
+    background-color: white;
+    width: 100%;
+}
+.frase-signup{
+    font-size: 35px;
+}
+@media screen and (max-width: 610px) {
+    .frase-signup{
+        font-size: 25px;
+    }
+    
+.container-divs {
+    width: 85%;
+}
+.input-email::placeholder,
+.input-password::placeholder{
+    font-size: 12px;
+}
+
+  }
