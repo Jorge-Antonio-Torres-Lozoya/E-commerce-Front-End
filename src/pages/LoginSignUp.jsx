@@ -15,9 +15,14 @@ import '../styles/loginSign.css'
 
 const LoginSignUp = () => {
   const [signIn, setSignIn] = React.useState(false)
-  const [showPassword, setShowPassword] = React.useState(false)
   const [rol, setRol] = React.useState('true')
+  const [showPassword, setShowPassword] = React.useState(false)
 
+  const handleClickShowPassword = () => setShowPassword((show) => !show)
+
+  const handleMouseDownPassword = (event) => {
+    event.preventDefault()
+  }
   const handleChange = (event) => {
     setRol(event.target.value)
   }
@@ -56,34 +61,20 @@ const LoginSignUp = () => {
       }
     }
   })
-  const BootstrapInput = styled(InputBase)(({ theme }) => ({
-    'label + &': {
-      // asegura que la etiqueta esté por encima del borde
-    },
-    '& label': {
-
-    },
-    '&:hover label': {
-      color: '#FFAD00'
-    },
-    '&:focus-within label': {
-      color: '#009C78'
-    },
-    '& .MuiInputBase-input': {
-      '&:hover': {
+  const inputPassword = {
+    '& .MuiOutlinedInput-root': {
+      '& fieldset': {
+        borderColor: '#E04B1E'
+      },
+      '&:hover fieldset': {
         borderColor: '#FFAD00'
       },
-      borderRadius: 4,
-      position: 'relative',
-      backgroundColor: theme.palette.background.paper,
-      border: '1px solid #E04B1E',
-      fontSize: 16,
-      padding: '10px 5px 5px 12px',
-      '&:focus': {
+      '&.Mui-focused fieldset': {
         borderColor: '#2ec4b6'
       }
     }
-  }))
+  }
+
   return (
     <div id='centro' className='Centro'>
       <div id='con' className='Container '>
@@ -112,18 +103,18 @@ const LoginSignUp = () => {
               sx={inputStyle}
             />
 
-            <CssTextField
+            <TextField
               label='Contraseña'
-              variant='outlined'
               margin='normal'
               size='small'
+              id='outlined-adornment-password'
               type={showPassword ? 'text' : 'password'}
               InputProps={{
                 endAdornment: (
                   <InputAdornment position='end'>
                     <IconButton
-                      onClick={() => setShowPassword(!showPassword)}
-                      onMouseDown={(event) => event.preventDefault()}
+                      onClick={handleClickShowPassword}
+                      onMouseDown={handleMouseDownPassword}
                       edge='end'
                       sx={{ color: '#009C78' }}
                     >
@@ -137,7 +128,8 @@ const LoginSignUp = () => {
                   </InputAdornment>
                 )
               }}
-              sx={inputStyle}
+              sx={inputPassword}
+
             />
             <FormControl sx={{ m: 1, minWidth: 200 }} size='small' className='rol'>
               <CssTextField
@@ -174,7 +166,7 @@ const LoginSignUp = () => {
               sx={inputStyle}
             />
 
-            <CssTextField
+            <TextField
               label='Contraseña'
               variant='outlined'
               margin='normal'
@@ -198,7 +190,7 @@ const LoginSignUp = () => {
                   </InputAdornment>
                 )
               }}
-              sx={inputStyle}
+              sx={inputPassword}
             />
 
             <button className='Button'>Inicia seción</button>
