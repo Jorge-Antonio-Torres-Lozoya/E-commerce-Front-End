@@ -1,8 +1,6 @@
 
 import Home from '../pages/Home'
-
 import LoginSignUp from '../pages/LoginSignUp'
-
 import { Route, Routes } from 'react-router-dom'
 
 const RoutesIndex = () => {

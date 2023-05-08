@@ -68,8 +68,8 @@
 }
 .Button {
  border-radius: 50px;
- border: 1px solid #ff4b2b;
- background-color: #f54915;
+ border: 1px solid #E04B1E;
+ background-color: #E04B1E;
  color: #ffffff;
  font-size: 12px;
  font-weight: bold;
@@ -80,8 +80,8 @@
 }
 .Button:active {
  transform: scale(.97);
- background-color: #f54915e3;
- border: 1px solid #f54915e3;
+ background-color: #E04B1E;
+ border: 1px solid #E04B1E;
 }
 .Button:focus {
  outline: none;
@@ -122,7 +122,7 @@
 
 .Overlay {
 
- background: linear-gradient(to right,#fa8e00 20%,#E04B1E );
+ background: linear-gradient(#E04B1E 20%,#fa8e00);
 
  color: #ffffff;
  position: relative;
