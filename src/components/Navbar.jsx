@@ -1,6 +1,7 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import '../styles/navbar.css'
+
 const Navbar = () => {
   return (
     <nav className='navbar navbar-expand-lg navbar-color '>
@@ -61,16 +62,23 @@ const Navbar = () => {
                 placeholder='Busca tu producto'
                 aria-label='Search'
               />
-              <button className='px-1 py-1 fa fa-search icon-search' type='submit' />
+              <button
+                className='px-1 py-1 fa fa-search icon-search'
+                type='submit'
+              />
             </div>
-
           </form>
-          <ul className='tx-none mx-4 my-auto navbar-nav gap-4'>
+          <ul className='tx-none mx-4 my-auto navbar-nav nav-links gap-4'>
+            <NavLink className='nav-item text-white'>Identificate</NavLink>
             <li className='nav-item '>
-              <button type='button' className='fa-solid fa-cart-shopping fa-2x icons ' />
+              <button
+                type='button'
+                className='fa-solid fa-cart-shopping fa-2x icons '
+              />
+              <span className='cart-count text-center'>0</span>
             </li>
             <li>
-              <button type='button' className='fa-solid fa-user fa-2x icons' />
+              <NavLink className='fa-solid fa-user fa-2x icons ' to='/' />
             </li>
           </ul>
         </div>
