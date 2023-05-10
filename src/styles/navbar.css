@@ -9,7 +9,7 @@
 
 .input-group-search {
     position: relative;
-    
+
 }
 
 .input-search {
@@ -36,8 +36,30 @@
     border: 0;
 }
 
-.icons{
-    color:white;
+.icons {
+    color: white;
     background-color: transparent;
     border: 0;
+    text-decoration: none;
+}
+
+.cart-count {
+    display: inline-block;
+    position: relative;
+    width: 20px;
+    height: 20px;
+    bottom: 1.2em;
+    right: 1.1em;
+    background-color: white;
+    border-radius: 50%;
+    color: black;
+    line-height: 20px;
+ 
+}
+
+.nav-links{
+align-items: center;
+}
+ul,a,li{
+    text-decoration: none;
 }
