@@ -1,30 +1,51 @@
+/* eslint-disable camelcase */
+/* eslint-disable react/prop-types */
 import React from 'react'
 import imagenDefault from '../assets/imgDefault.png'
 import '../styles/card.css'
+import { useProductContext } from '../context/ProductContext'
 
-const Card = () => {
+const Card = ({ product_name, description, image, price, _id }) => {
+  const context = useProductContext()
+
   const addDefaultSrc = (ev) => {
     ev.target.src = imagenDefault
   }
+
   const addToCart = () => {
-    console.log('agregado al carrito')
+    context.setCart((currItems) => {
+      console.log(currItems)
+      const isItemsFound = currItems.find((item) => item._id === _id)
+      if (isItemsFound) {
+        return currItems.map((item) => {
+          console.log(item)
+          if (item._id === _id) {
+            return { ...item, quantity: item.quantity + 1 }
+          } else {
+            return item
+          }
+        })
+      } else {
+        return [...currItems, { _id, product_name, quantity: 1, price }]
+      }
+    })
   }
 
   return (
     <div className='card' style={{ width: '18rem' }}>
       <img
         onError={addDefaultSrc}
-        src={imagenDefault}
-        className='card-img-top'
+        src={image || imagenDefault}
+        className='card-img-top img-card'
         alt='...'
       />
       <div className='card-body d-flex container-body-card'>
+        <p>{product_name}</p>
         <p className='card-text'>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
+          {description}
         </p>
         <div className='container-price d-flex'>
-          <span>$</span>
+          <span>${price}</span>
           <button className='fa-solid fa-cart-plus btn-cart-plus px-2 py-2' onClick={() => addToCart()} />
         </div>
       </div>
