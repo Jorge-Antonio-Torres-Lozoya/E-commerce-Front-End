@@ -1,8 +1,26 @@
 import React from 'react'
-import { Link, NavLink } from 'react-router-dom'
+import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom'
 import '../styles/navbar.css'
+import { useProductContext } from '../context/ProductContext'
 
 const Navbar = () => {
+  const context = useProductContext()
+  const location = useLocation()
+  const navigate = useNavigate()
+
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    context.setSearch(event.target.inputSearch.value)
+    console.log(context.search)
+    if (location.pathname !== '/') {
+      navigate('/')
+    }
+    console.log(location.pathname)
+  }
+
+  const quantity = context.cart.reduce((acc, curr) => {
+    return acc + curr.quantity
+  }, 0)
   return (
     <nav className='navbar navbar-expand-lg navbar-color '>
       <div className='container-fluid '>
@@ -54,13 +72,14 @@ const Navbar = () => {
               </ul>
             </li>
           </ul>
-          <form className='d-flex ' role='search'>
+          <form onSubmit={handleSubmit} className='d-flex ' role='search'>
             <div className='input-group-search'>
               <input
                 className=' me-4 px-5 input-search'
                 type='search'
                 placeholder='Busca tu producto'
                 aria-label='Search'
+                name='inputSearch'
               />
               <button
                 className='px-1 py-1 fa fa-search icon-search'
@@ -69,13 +88,13 @@ const Navbar = () => {
             </div>
           </form>
           <ul className='tx-none mx-4 my-auto navbar-nav nav-links gap-4'>
-            <NavLink className='nav-item text-white'>Identificate</NavLink>
+            <li className='item'><NavLink className='text-decoration-none text-white'>Identificate</NavLink></li>
             <li className='nav-item '>
               <button
                 type='button'
                 className='fa-solid fa-cart-shopping fa-2x icons '
               />
-              <span className='cart-count text-center'>0</span>
+              <span className='cart-count text-center'>{quantity}</span>
             </li>
             <li>
               <NavLink className='fa-solid fa-user fa-2x icons ' to='/' />

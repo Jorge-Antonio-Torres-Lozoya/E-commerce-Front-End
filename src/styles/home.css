@@ -1,0 +1,12 @@
+.contenedorRoot{
+    display: flex;
+   margin-top: 3em; 
+
+}
+.columns{
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+gap: 40px;
+
+}
