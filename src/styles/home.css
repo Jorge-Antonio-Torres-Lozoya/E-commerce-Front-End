@@ -10,3 +10,8 @@ justify-content: center;
 gap: 40px;
 
 }
+
+.textLoading{
+    text-align: center;
+    width: 100vw;
+  } 

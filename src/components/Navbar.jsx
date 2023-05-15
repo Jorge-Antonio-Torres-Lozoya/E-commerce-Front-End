@@ -17,10 +17,10 @@ const Navbar = () => {
     }
     console.log(location.pathname)
   }
-
   const quantity = context.cart.reduce((acc, curr) => {
     return acc + curr.quantity
   }, 0)
+
   return (
     <nav className='navbar navbar-expand-lg navbar-color '>
       <div className='container-fluid '>
@@ -75,7 +75,7 @@ const Navbar = () => {
           <form onSubmit={handleSubmit} className='d-flex ' role='search'>
             <div className='input-group-search'>
               <input
-                className=' me-4 px-5 input-search'
+                className=' me-4 px-5 input-search focus-ring focus-ring-light'
                 type='search'
                 placeholder='Busca tu producto'
                 aria-label='Search'
@@ -90,11 +90,14 @@ const Navbar = () => {
           <ul className='tx-none mx-4 my-auto navbar-nav nav-links gap-4'>
             <li className='item'><NavLink className='text-decoration-none text-white'>Identificate</NavLink></li>
             <li className='nav-item '>
-              <button
-                type='button'
+              <NavLink
+                to='/cart'
                 className='fa-solid fa-cart-shopping fa-2x icons '
-              />
-              <span className='cart-count text-center'>{quantity}</span>
+              >
+
+                <span className='cart-count text-center'>{quantity}</span>
+              </NavLink>
+
             </li>
             <li>
               <NavLink className='fa-solid fa-user fa-2x icons ' to='/' />

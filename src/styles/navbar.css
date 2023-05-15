@@ -48,12 +48,14 @@
     position: relative;
     width: 20px;
     height: 20px;
-    bottom: 1.2em;
-    right: 1.1em;
+    bottom: 1.5em;
+    right: .9em;
     background-color: white;
     border-radius: 50%;
     color: black;
     line-height: 20px;
+    font-size: 14px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
  
 }
 

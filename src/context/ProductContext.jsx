@@ -13,7 +13,7 @@ function ProductProvider (props) {
   const [loading, setLoading] = useState(true) // Loader o Ya cargo la informacion o no?
   const [selectedProduct, setSelectedProduct] = useState([] || {})
   const [search, setSearch] = useState('') // Guardar la palabra que se busca
-  const [cart, setCart] = useState([])
+  const [cart, setCart] = useState([] || {})
 
   //   const getData = async () => {
   //     try {
