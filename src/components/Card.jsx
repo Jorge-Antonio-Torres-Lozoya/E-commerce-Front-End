@@ -13,22 +13,15 @@ const Card = ({ product_name, description, image, price, _id }) => {
   }
 
   const addToCart = () => {
-    context.setCart((currItems) => {
-      console.log(currItems)
-      const isItemsFound = currItems.find((item) => item._id === _id)
-      if (isItemsFound) {
-        return currItems.map((item) => {
-          console.log(item)
-          if (item._id === _id) {
-            return { ...item, quantity: item.quantity + 1 }
-          } else {
-            return item
-          }
-        })
-      } else {
-        return [...currItems, { _id, product_name, quantity: 1, price }]
-      }
-    })
+    const product = context.data.find(product => product._id === _id)
+    const isInCart = context.cart.find(product => product._id === _id)
+    if (isInCart === undefined) {
+      product.quantity = 1
+      context.setCart([...context.cart, product])
+    } else {
+      isInCart.quantity += 1
+      context.setCart([...context.cart])
+    }
   }
 
   return (

@@ -10,7 +10,7 @@ const Home = () => {
         <div className='columns'>
           {
       context.loading
-        ? <p className='textLoading py-2'>Cargando...</p>
+        ? <p className='textLoading py-2 fs-3 '>Cargando...</p>
         : context.data.filter(product => {
           if (context.search === '') {
             return product
