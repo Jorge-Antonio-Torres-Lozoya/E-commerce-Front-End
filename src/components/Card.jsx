@@ -5,7 +5,7 @@ import imagenDefault from '../assets/imgDefault.png'
 import '../styles/card.css'
 import { useProductContext } from '../context/ProductContext'
 
-const Card = ({ product_name, description, image, price, _id }) => {
+const Card = ({ product_name, brand, image, price, _id, description }) => {
   const context = useProductContext()
 
   const addDefaultSrc = (ev) => {
@@ -33,12 +33,13 @@ const Card = ({ product_name, description, image, price, _id }) => {
         alt='...'
       />
       <div className='card-body d-flex container-body-card'>
-        <p>{product_name}</p>
+        <p className='card-text'>{product_name}</p>
         <p className='card-text'>
-          {description}
+          {brand}
         </p>
+        <p className='card-text info'> {description} </p>
         <div className='container-price d-flex'>
-          <span>${price}</span>
+          <span className='card-price'> <p className='price'> $ {price} </p> </span>
           <button className='fa-solid fa-cart-plus btn-cart-plus px-2 py-2' onClick={() => addToCart()} />
         </div>
       </div>
