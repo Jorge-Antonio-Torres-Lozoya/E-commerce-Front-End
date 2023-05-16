@@ -22,7 +22,7 @@ const Navbar = () => {
   }, 0)
 
   return (
-    <nav className='navbar navbar-expand-lg navbar-color '>
+    <nav className='navbar navbar-expand-lg navbar-color fixed-top '>
       <div className='container-fluid '>
         <Link className='navbar-brand text-white fs-2 py-1 mx-2' to='/'>
           Tonal
@@ -38,7 +38,7 @@ const Navbar = () => {
         >
           <span className='navbar-toggler-icon' />
         </button>
-        <div className='collapse navbar-collapse ' id='navbarSupportedContent'>
+        <div className='collapse navbar-collapse container-collapse ' id='navbarSupportedContent'>
           <ul className='navbar-nav me-auto mb-2 mb-lg-0'>
             <li className='nav-item dropdown'>
               <a
@@ -88,11 +88,11 @@ const Navbar = () => {
             </div>
           </form>
           <ul className='tx-none mx-4 my-auto navbar-nav nav-links gap-4'>
-            <li className='item'><NavLink className='text-decoration-none text-white'>Identificate</NavLink></li>
+            <li className='item'><NavLink to='/login' className='text-decoration-none text-white'>Identificate</NavLink></li>
             <li className='nav-item '>
               <NavLink
                 to='/cart'
-                className='fa-solid fa-cart-shopping fa-2x icons '
+                className='fa-solid fa-cart-shopping fa-2x icons ms-3 '
               >
 
                 <span className='cart-count text-center'>{quantity}</span>
