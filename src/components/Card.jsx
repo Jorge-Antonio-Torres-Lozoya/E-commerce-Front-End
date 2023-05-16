@@ -25,21 +25,21 @@ const Card = ({ product_name, brand, image, price, _id, description }) => {
   }
 
   return (
-    <div className='card' style={{ width: '18rem' }}>
+    <div className='card card-home' style={{ width: '22rem', height: '37rem' }}>
       <img
         onError={addDefaultSrc}
         src={image || imagenDefault}
         className='card-img-top img-card'
         alt='...'
       />
-      <div className='card-body d-flex container-body-card'>
+      <div className='card-body d-flex container-body-card px-4'>
         <p className='card-text'>{product_name}</p>
         <p className='card-text'>
           {brand}
         </p>
         <p className='card-text info'> {description} </p>
-        <div className='container-price d-flex'>
-          <span className='card-price'> <p className='price'> $ {price} </p> </span>
+        <div className='container-price d-flex '>
+          <span className='card-price'> <p className='price my-0'> $ {price} </p> </span>
           <button className='fa-solid fa-cart-plus btn-cart-plus px-2 py-2' onClick={() => addToCart()} />
         </div>
       </div>

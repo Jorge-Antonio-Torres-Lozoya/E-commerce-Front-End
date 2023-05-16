@@ -1,8 +1,8 @@
 import React from 'react'
 import { useProductContext } from '../context/ProductContext'
-import ShoppingCartCard from '../components/shoppingCartCard'
 import '../styles/shoppingCart.css'
 import { Link } from 'react-router-dom'
+import ShoppingCartCard from '../components/ShoppingCartCard'
 
 const ShoppingCart = () => {
   const context = useProductContext()
@@ -25,7 +25,7 @@ const ShoppingCart = () => {
       <main className='root-page-cart'>
         {quantityItemsInCart < 1
           ? (
-            <div className='container-root-whithout-items d-flex justify-content-center py-5'>
+            <div className='container-root-whithout-items my-5 d-flex justify-content-center py-5'>
               <div className=' container-whithout-items'>
                 <h2 className='text-center py-4 mx-3'>
                   No hay ningun elemento en el carrito
