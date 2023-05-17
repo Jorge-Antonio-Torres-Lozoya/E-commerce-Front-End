@@ -2,6 +2,7 @@ import React from 'react'
 import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom'
 import '../styles/navbar.css'
 import { useProductContext } from '../context/ProductContext'
+// import { logo } from '../assets/logo-tonal.png'
 
 const Navbar = () => {
   const context = useProductContext()
