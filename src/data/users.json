@@ -1,0 +1,82 @@
+[
+    {
+        "isActive": true,
+        "id": "1",
+        "nombre": "Abelardo",
+        "apellido": "Aguilar",
+        "correo": "1243@gmail.com",
+        "password": "abcd",
+        "fecha-de-nacimiento": "01-01-1980",
+        "createdAt": "2020-11-23T20:20:54.245Z"
+    },
+    {
+        "isActive": true,
+        "id": "2",
+        "nombre": "Elisa",
+        "apellido": "Montes",
+        "correo": "eli2@gmail.com",
+        "password": "hola2",
+        "fecha-de-nacimiento": "15-03-1970",
+        "createdAt": "2020-11-23T20:20:54.245Z"
+    },
+    {
+        "isActive": true,
+        "id": "3",
+        "nombre": "Ana",
+        "apellido": "Lopez",
+        "correo": "anne@gmail.com",
+        "password": "anita",
+        "fecha-de-nacimiento": "20-02-1990",
+        "createdAt": "2020-11-23T20:20:54.245Z"
+    },
+    {
+        "isActive": true,
+        "id": "4",
+        "nombre": "Carla",
+        "apellido": "Mendez",
+        "correo": "car@gmail.com",
+        "password": "gatito",
+        "fecha-de-nacimiento": "30-11-1993",
+        "createdAt": "2020-11-23T20:20:54.245Z"
+    },
+    {
+        "isActive": true,
+        "id": "5",
+        "nombre": "Antonio",
+        "apellido": "Ramirez",
+        "correo": "anra@gmail.com",
+        "password": "zapato",
+        "fecha-de-nacimiento": "16-09-1987",
+        "createdAt": "2020-11-23T20:20:54.245Z"
+    },
+    {
+        "isActive": true,
+        "id": "6",
+        "nombre": "Sonia",
+        "apellido": "Perez",
+        "correo": "sonia@gmail.com",
+        "password": "flores",
+        "fecha-de-nacimiento": "19-08-1970",
+        "createdAt": "2020-11-23T20:20:54.245Z"
+    },
+    {
+        "isActive": true,
+        "id": "7",
+        "nombre": "Carlo",
+        "apellido": "Santillana",
+        "correo": "carsan@gmail.com",
+        "password": "programa",
+        "fecha-de-nacimiento": "26-09-1992",
+        "createdAt": "2020-11-23T20:20:54.245Z"
+    },
+    {
+        "isActive": true,
+        "id": "8",
+        "nombre": "Carlo",
+        "apellido": "Santillana",
+        "correo": "carsan@gmail.com",
+        "password": "programa",
+        "fecha-de-nacimiento": "26-09-1992",
+        "createdAt": "2020-11-23T20:20:54.245Z"
+    }
+]
