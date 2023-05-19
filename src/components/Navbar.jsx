@@ -1,13 +1,15 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Link, NavLink, useLocation, useNavigate } from 'react-router-dom'
 import '../styles/navbar.css'
 import { useProductContext } from '../context/ProductContext'
-// import { logo } from '../assets/logo-tonal.png'
+import logo from '../assets/tonal-navbar.png'
+import { AuthContext } from '../context/AuthContext'
 
 const Navbar = () => {
   const context = useProductContext()
   const location = useLocation()
   const navigate = useNavigate()
+  const { isAuth, logout } = useContext(AuthContext)
 
   const handleSubmit = (event) => {
     event.preventDefault()
@@ -21,13 +23,60 @@ const Navbar = () => {
   const quantity = context.cart.reduce((acc, curr) => {
     return acc + curr.quantity
   }, 0)
+  const resetSearch = () => {
+    context.setSearch('')
+  }
+
+  const Artesania = () => {
+    context.setSearch('Artesania')
+    console.log(context.search)
+  }
+  const Libros = () => {
+    context.setSearch('Libros')
+    console.log(context.search)
+  }
+  const Espejos = () => {
+    context.setSearch('Espejos')
+    console.log(context.search)
+  }
+  const Musica = () => {
+    context.setSearch('Music')
+    console.log(context.search)
+  }
+  const Automotive = () => {
+    context.setSearch('Automotive')
+    console.log(context.search)
+  }
+
+  const Sahumador = () => {
+    context.setSearch('Sahumador')
+    console.log(context.search)
+  }
+  const Danza = () => {
+    context.setSearch('Danza')
+    console.log(context.search)
+  }
+
+  const Juegos = () => {
+    context.setSearch('Juegos')
+    console.log(context.search)
+  }
+  const Industrial = () => {
+    context.setSearch('Industrial')
+    console.log(context.search)
+  }
+  const Ropa = () => {
+    context.setSearch('Ropa')
+    console.log(context.search)
+  }
 
   return (
     <nav className='navbar navbar-expand-lg navbar-color fixed-top '>
-      <div className='container-fluid '>
-        <Link className='navbar-brand text-white fs-2 py-1 mx-2' to='/'>
-          Tonal
+      <div className='container-fluid  '>
+        <Link className='navbar-brand text-white fs-2 py-1 mx-2' to='/' onClick={resetSearch}>
+          <img className='logo-tonal-nav mb-1' src={logo} alt='' />
         </Link>
+
         <button
           className='navbar-toggler'
           type='button'
@@ -43,7 +92,7 @@ const Navbar = () => {
           <ul className='navbar-nav me-auto mb-2 mb-lg-0'>
             <li className='nav-item dropdown'>
               <a
-                className='nav-link dropdown-toggle text-white mx-4'
+                className='nav-link dropdown-toggle text-white mx-5'
                 href='#'
                 role='button'
                 data-bs-toggle='dropdown'
@@ -53,22 +102,54 @@ const Navbar = () => {
               </a>
               <ul className='dropdown-menu'>
                 <li>
-                  <a className='dropdown-item' href='#'>
-                    Action
-                  </a>
+                  <button className='dropdown-item' onClick={() => Artesania()}>
+                    Artesania
+                  </button>
                 </li>
                 <li>
-                  <a className='dropdown-item' href='#'>
-                    Another action
-                  </a>
+                  <button className='dropdown-item' onClick={() => Libros()}>
+                    Libros
+                  </button>
                 </li>
                 <li>
-                  <hr className='dropdown-divider' />
+                  <button className='dropdown-item' onClick={() => Espejos()}>
+                    Espejos
+                  </button>
                 </li>
                 <li>
-                  <a className='dropdown-item' href='#'>
-                    Something else here
-                  </a>
+                  <button className='dropdown-item' onClick={() => Musica()}>
+                    Música
+                  </button>
+                </li>
+                <li>
+                  <button className='dropdown-item' onClick={() => Automotive()}>
+                    Automotive
+                  </button>
+                </li>
+                <li>
+                  <button className='dropdown-item' onClick={() => Sahumador()}>
+                    Sahumador
+                  </button>
+                </li>
+                <li>
+                  <button className='dropdown-item' onClick={() => Danza()}>
+                    Danza
+                  </button>
+                </li>
+                <li>
+                  <button className='dropdown-item' onClick={() => Juegos()}>
+                    Juegos
+                  </button>
+                </li>
+                <li>
+                  <button className='dropdown-item' onClick={() => Industrial()}>
+                    Industrial
+                  </button>
+                </li>
+                <li>
+                  <button className='dropdown-item' onClick={() => Ropa()}>
+                    Ropa
+                  </button>
                 </li>
               </ul>
             </li>
@@ -88,8 +169,14 @@ const Navbar = () => {
               />
             </div>
           </form>
+
           <ul className='tx-none mx-4 my-auto navbar-nav nav-links gap-4'>
-            <li className='item'><NavLink to='/login' className='text-decoration-none text-white'>Identificate</NavLink></li>
+            {
+            !isAuth
+              ? <li className='item'><NavLink to='/login' className='text-decoration-none text-white'>Identificate</NavLink></li>
+              : <li className='item cerrar-sesion' onClick={logout}><NavLink to='/login' className='text-decoration-none text-white'>Cerrar Sesion</NavLink></li>
+
+}
             <li className='nav-item '>
               <NavLink
                 to='/cart'

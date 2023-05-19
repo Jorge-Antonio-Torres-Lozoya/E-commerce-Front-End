@@ -3,6 +3,8 @@
     background:  #E04B1E;
     border: 0;
     color: white;
+    width: 40px;
+    height: 40px;
 
 }
 .container-body-card{
@@ -23,7 +25,8 @@
 
 .card-home:hover {
     box-shadow: 5px, 5px 24px rgba(0,0,0,0.9);
-    transform: translateY(-4.5%);
+    /* transform: translateY(-2.5%); */
+    transform: scale(1.03);
 }
 
 .img-card{
