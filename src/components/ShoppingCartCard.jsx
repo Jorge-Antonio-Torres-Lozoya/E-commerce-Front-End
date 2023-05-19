@@ -47,7 +47,7 @@ export const ShoppingCartCard = ({
               <h5 className='card-title'>{product_name}</h5>
               <span className='fw-bold fz-price'>${price}</span>
             </div>
-            <p className='card-text'>Marca: {brand}</p>
+            <p className='card-text text-start'>Marca: {brand}</p>
             <span className='btn-add-delete rounded py-2'>
               <button className='fa-solid fa-minus me-3 minus  border border-0 text-black   bg-transparent  ' onClick={() => minusToCart()} />
               Cant: {quantity}{' '}

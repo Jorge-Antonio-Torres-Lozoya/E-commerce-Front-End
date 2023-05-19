@@ -1,4 +1,4 @@
-import React from 'react'
+
 import { styled } from '@mui/material/styles'
 import AccountCircle from '@mui/icons-material/AccountCircle'
 import TextField from '@mui/material/TextField'
@@ -8,23 +8,72 @@ import EmailOutlined from '@mui/icons-material/EmailOutlined'
 import Visibility from '@mui/icons-material/Visibility'
 import VisibilityOff from '@mui/icons-material/VisibilityOff'
 import LockOutlined from '@mui/icons-material/LockOutlined'
-import MenuItem from '@mui/material/MenuItem'
-import FormControl from '@mui/material/FormControl'
+// import MenuItem from '@mui/material/MenuItem'
+// import FormControl from '@mui/material/FormControl'
 // import InputBase from '@mui/material/InputBase'
 import '../styles/loginSign.css'
+import { useNavigate } from 'react-router'
+import { AuthContext } from '../context/AuthContext'
+import { loginUserServices } from '../services/userServices'
+import useForm from '../hooks/useForm'
+import React, { useContext, useMemo } from 'react'
 
 const LoginSignUp = () => {
   const [signIn, setSignIn] = React.useState(false)
-  const [rol, setRol] = React.useState('true')
+  // const [rol, setRol] = React.useState('true')
   const [showPassword, setShowPassword] = React.useState(false)
 
+  const navigate = useNavigate()
+  const { loginUser } = useContext(AuthContext)
+
+  const sendData = async (data) => {
+    try {
+      const result = await loginUserServices(data)
+      console.log(result.data.token)
+      if (result.status === 200) {
+        loginUser(result.data.token)
+        navigate('/')
+      }
+    } catch (err) {
+      window.alert('Correo o contraseña incorecta')
+      console.log('Ocurrio un erron en Login: ' + err.message)
+    }
+  }
+  const { input, handleInputChange, handleSubmit } = useForm(sendData, {
+    email: '',
+    password: ''
+  })
+
+  const inputStyle = {
+    '& label': {
+      color: '#E04B1E'
+    },
+    '&:hover label': {
+      color: '#FFAD00'
+    },
+    '&:focus-within label': {
+      color: '#009C78'
+    }
+  }
+  const textField = useMemo(() => (
+    <TextField
+      label='Correo electrónico'
+      variant='outlined'
+      margin='normal'
+      type='email'
+      name='email'
+      value={input.email}
+      onChange={handleInputChange}
+      InputProps={{
+        startAdornment: <EmailOutlined sx={{ color: '#009C78' }} />
+      }}
+      sx={inputStyle}
+    />
+  ), [input.email, handleInputChange])
   const handleClickShowPassword = () => setShowPassword((show) => !show)
 
   const handleMouseDownPassword = (event) => {
     event.preventDefault()
-  }
-  const handleChange = (event) => {
-    setRol(event.target.value)
   }
   const handleSignInClick = () => {
     setSignIn(true)
@@ -37,17 +86,7 @@ const LoginSignUp = () => {
   // const toggle = (val) => {
   //   setSignIn(val)
   // }
-  const inputStyle = {
-    '& label': {
-      color: '#E04B1E'
-    },
-    '&:hover label': {
-      color: '#FFAD00'
-    },
-    '&:focus-within label': {
-      color: '#009C78'
-    }
-  }
+
   const CssTextField = styled(TextField)({
     '& .MuiOutlinedInput-root': {
       '& fieldset': {
@@ -77,9 +116,9 @@ const LoginSignUp = () => {
 
   return (
     <div id='centro' className='Centro'>
-      <div id='con' className='Container '>
+      <div id='con' className='Container  container-responsive '>
         <div id='SignUp' className={`SignUpContainer ${!signIn ? 'SignUpContainer-active' : ''}`}>
-          <form id='form' className='Form '>
+          <form id='form ' className='Form'>
             <h1 className='Title mb-2'>Registrate</h1>
             <CssTextField
               id='custom-css-outlined-input' label='Nombre' variant='outlined' margin='normal' size='small' InputProps={{
@@ -131,45 +170,21 @@ const LoginSignUp = () => {
               sx={inputPassword}
 
             />
-            <FormControl sx={{ m: 1, minWidth: 200 }} size='small' className='rol'>
-              <CssTextField
-                label='¿Que rol prefieres?'
-                margin='normal'
-                size='small'
-                value={rol}
-                onChange={handleChange}
-                select
-                sx={inputStyle}
-              >
-                <MenuItem value=''>
-                  <em>Ninguno</em>
-                </MenuItem>
-                <MenuItem value={20}>Administrador</MenuItem>
-                <MenuItem value={30}>Usuario</MenuItem>
-              </CssTextField>
-            </FormControl>
             <button className='Button'>Registrar</button>
 
           </form>
         </div>
         <div id='SignIn' className={` SignInContainer ${!signIn ? 'SignInContainer-active' : ''}`}>
-          <form className='Form'>
+          <form className='Form' onSubmit={handleSubmit}>
             <h1 className='Title mb-2'>¡Bievenido!</h1>
-            <CssTextField
-              label='Correo electrónico'
-              variant='outlined'
-              margin='normal'
-              type='email'
-              InputProps={{
-                startAdornment: <EmailOutlined sx={{ color: '#009C78' }} />
-              }}
-              sx={inputStyle}
-            />
-
+            {textField}
             <TextField
               label='Contraseña'
               variant='outlined'
               margin='normal'
+              name='password'
+              value={input.password}
+              onChange={handleInputChange}
               type={showPassword ? 'text' : 'password'}
               InputProps={{
                 endAdornment: (
@@ -190,7 +205,7 @@ const LoginSignUp = () => {
                   </InputAdornment>
                 )
               }}
-              sx={inputPassword}
+
             />
 
             <button className='Button mt-3'>Inicia sesión</button>

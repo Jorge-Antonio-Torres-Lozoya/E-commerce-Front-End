@@ -6,8 +6,8 @@ const Home = () => {
   const context = useProductContext()
   return (
     <>
-      <section className='contenedorRoot '>
-        <div className='columns'>
+      <section className='contenedorRoot justify-content-center '>
+        <div className='columns mb-5'>
           {
       context.loading
         ? <p className='textLoading py-2 fs-3 '>Cargando...</p>
@@ -15,6 +15,8 @@ const Home = () => {
           if (context.search === '') {
             return product
           } else if (product.product_name.toLowerCase().includes(context.search.toLowerCase())) {
+            return product
+          } else if (product.category.includes(context.search)) {
             return product
           }
           return null

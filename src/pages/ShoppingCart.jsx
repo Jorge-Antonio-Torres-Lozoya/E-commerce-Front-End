@@ -55,12 +55,6 @@ const ShoppingCart = () => {
                       Productos en el carrito: {quantityInCart}
                     </p>
                     <h5 className='card-title  '>Total: ${totalPrice}</h5>
-                    <button
-                      type='button' className='btn btn-checkout data-bs-toggle="modal" data-bs-target="#exampleModal"' data-bs-toggle='modal' data-bs-target='#exampleModal'
-                      onClick={() => makeOrder()}
-                    >
-                      Proceder al pago
-                    </button>
                     <div className='modal fade' id='exampleModal' tabIndex={-1} aria-labelledby='exampleModalLabel' aria-hidden='true'>
                       <div className='modal-dialog'>
                         <div className='modal-content'>
@@ -85,6 +79,12 @@ const ShoppingCart = () => {
 
                   </div>
                 </div>
+                <button
+                  type='button' className='btn btn-checkout  my-2 data-bs-toggle="modal" data-bs-target="#exampleModal"' data-bs-toggle='modal' data-bs-target='#exampleModal'
+                  onClick={() => makeOrder()}
+                >
+                  Proceder al pago
+                </button>
               </div>
             </section>
             )}

@@ -2,7 +2,6 @@
 /* eslint-disable react/prop-types */
 
 import { createContext, useState, useContext, useEffect } from 'react'
-import productsData from '../data/products.json'
 
 // 1 Creacion del contexto vacio
 const ProductContext = createContext()
@@ -15,26 +14,26 @@ function ProductProvider (props) {
   const [search, setSearch] = useState('') // Guardar la palabra que se busca
   const [cart, setCart] = useState([] || {})
 
-  //   const getData = async () => {
-  //     try {
-  //     //   const req = await window.fetch('https://ecomerce-master.herokuapp.com/api/v1/item')
-  //     //   const res = await req.json()
-  //       setData(productsData)
-  //       console.log(data)
-  //       setLoading(false)
-  //     } catch (error) {
-  //       console.log(error)
-  //     }
-  //   }
-
-  //   useEffect(() => {
-  //     getData()
-  //   }, [])
+  const getData = async () => {
+    try {
+      const req = await window.fetch('https://crazy-pink-petticoat.cyclic.app/items')
+      const res = await req.json()
+      setData(res)
+      console.log(data)
+      setLoading(false)
+    } catch (error) {
+      console.log(error)
+    }
+  }
 
   useEffect(() => {
-    setData(productsData)
-    setLoading(false)
+    getData()
   }, [])
+
+  // useEffect(() => {
+  //   setData(productsData)
+  //   setLoading(false)
+  // }, [])
 
   const value = {
     data,
