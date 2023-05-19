@@ -1,0 +1,17 @@
+.contenedorRoot{
+    display: flex;
+   margin-top: 6em; 
+
+}
+.columns{
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+gap: 40px;
+
+}
+
+.textLoading{
+    text-align: center;
+    width: 100vw;
+  } 

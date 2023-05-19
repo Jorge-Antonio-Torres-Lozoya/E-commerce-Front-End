@@ -1,5 +1,9 @@
+.logo-tonal-nav{
+    
+}
+
 .navbar-color {
-    background-color: #E04B1E;
+    background-color: #151515;
     color: white;
 }
 
@@ -9,7 +13,7 @@
 
 .input-group-search {
     position: relative;
-    
+
 }
 
 .input-search {
@@ -36,8 +40,41 @@
     border: 0;
 }
 
-.icons{
-    color:white;
+.icons {
+    color: white;
     background-color: transparent;
     border: 0;
+    text-decoration: none;
+}
+
+.cart-count {
+    display: inline-block;
+    position: relative;
+    width: 20px;
+    height: 20px;
+    bottom: 1.5em;
+    right: .9em;
+    background-color: white;
+    border-radius: 50%;
+    color: black;
+    line-height: 20px;
+    font-size: 14px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ 
+}
+
+.nav-links{
+align-items: center;
+}
+
+@media only screen and (max-width: 991px) {
+    .navbar-nav{
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .container-collapse{
+        display: flex;
+       
+    }
 }
