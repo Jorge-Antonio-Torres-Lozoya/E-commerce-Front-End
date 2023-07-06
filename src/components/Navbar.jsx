@@ -73,12 +73,12 @@ const Navbar = () => {
   return (
     <nav className='navbar navbar-expand-lg navbar-color fixed-top '>
       <div className='container-fluid  '>
-        <Link className='navbar-brand text-white fs-2 py-1 mx-2' to='/' onClick={resetSearch}>
+        <Link className='navbar-brand text-white fs-2 py-1 mx-2 logo' to='/' onClick={resetSearch}>
           <img className='logo-tonal-nav mb-1' src={logo} alt='' />
         </Link>
 
         <button
-          className='navbar-toggler'
+          className=' btn-nav'
           type='button'
           data-bs-toggle='collapse'
           data-bs-target='#navbarSupportedContent'
@@ -86,13 +86,13 @@ const Navbar = () => {
           aria-expanded='false'
           aria-label='Toggle navigation'
         >
-          <span className='navbar-toggler-icon' />
+          <i className='fa-solid fa-bars fa-lg nav-bars' />
         </button>
-        <div className='collapse navbar-collapse container-collapse ' id='navbarSupportedContent'>
-          <ul className='navbar-nav me-auto mb-2 mb-lg-0'>
+        <div className='collapse navbar-collapse container-collapse   ' id='navbarSupportedContent'>
+          <ul className=' me-auto mb-2 mb-lg-0 lista-categoria'>
             <li className='nav-item dropdown'>
               <a
-                className='nav-link dropdown-toggle text-white mx-5'
+                className='nav-link dropdown-toggle text-white me-5 '
                 href='#'
                 role='button'
                 data-bs-toggle='dropdown'
@@ -154,7 +154,7 @@ const Navbar = () => {
               </ul>
             </li>
           </ul>
-          <form onSubmit={handleSubmit} className='d-flex ' role='search'>
+          <form onSubmit={handleSubmit} className='d-flex search-form ' role='search'>
             <div className='input-group-search'>
               <input
                 className=' me-4 px-5 input-search focus-ring focus-ring-light'
@@ -170,7 +170,7 @@ const Navbar = () => {
             </div>
           </form>
 
-          <ul className='tx-none mx-4 my-auto navbar-nav nav-links gap-4'>
+          <ul className='tx-none me-4 ms-3 my-auto d-flex nav-links gap-4'>
             {
             !isAuth
               ? <li className='item'><NavLink to='/login' className='text-decoration-none text-white'>Identificate</NavLink></li>
@@ -192,6 +192,7 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
+
       </div>
     </nav>
   )

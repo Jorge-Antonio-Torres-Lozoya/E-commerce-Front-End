@@ -118,7 +118,7 @@ const LoginSignUp = () => {
     <div id='centro' className='Centro'>
       <div id='con' className='Container  container-responsive '>
         <div id='SignUp' className={`SignUpContainer ${!signIn ? 'SignUpContainer-active' : ''}`}>
-          <form id='form ' className='Form'>
+          <form id='form ' className='Form formSignUp'>
             <h1 className='Title mb-2'>Registrate</h1>
             <CssTextField
               id='custom-css-outlined-input' label='Nombre' variant='outlined' margin='normal' size='small' InputProps={{

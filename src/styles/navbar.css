@@ -66,9 +66,22 @@
 .nav-links{
 align-items: center;
 }
+.btn-nav{
+    min-width: 35px;
+    background-color:#6173F9;
+border: 2px solid #6173F9;
+    display: none;
+}
+.nav-bars{
+    color: white;
+}
+.lista-categoria{
+list-style: none;
+}
 
 @media only screen and (max-width: 991px) {
-    .navbar-nav{
+
+    .nav-links{
         flex-direction: row;
         justify-content: center;
         flex-wrap: wrap;
@@ -77,4 +90,15 @@ align-items: center;
         display: flex;
        
     }
+    .btn-nav{
+        display: block;
+    }
+}
+
+
+@media only screen and (max-width: 668px) {
+    /* .search-form{
+        top: -109px;
+        left: 50px;
+    } */
 }

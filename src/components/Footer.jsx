@@ -6,9 +6,9 @@ import '../styles/footer.css'
 const Footer = () => {
   return (
     <div>
-      <footer className='text white py-5 bg-dark'>
+      <footer className='text white py-3 bg-dark footer'>
         <div className='container'>
-          <nav className='row gap-5 align-items-center'>
+          <nav className='row gap-5 align-items-center navbar'>
             <Link to='/' className='col-12 col-md-3 d-flex aling-items-center justify-content-center'>
               <img src={tonal} alt='logo' className='mx-2' />
             </Link>
