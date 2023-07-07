@@ -9,10 +9,10 @@ const Footer = () => {
       <footer className='text white py-3 bg-dark footer'>
         <div className='container'>
           <nav className='row gap-5 align-items-center navbar'>
-            <Link to='/' className='col-12 col-md-3 d-flex aling-items-center justify-content-center'>
-              <img src={tonal} alt='logo' className='mx-2' />
+            <Link to='/' className='col-12 col-md-3 d-flex aling-items-center justify-content-center pe-5 ps-4 mx-4'>
+              <img src={tonal} alt='logo' className='' />
             </Link>
-            <ul className='col-12 col-md-6 list-unstyled d-flex gap-5 justify-content-center align-items-center mb-0 '>
+            <ul className='col-12 col-md-6 list-unstyled d-flex gap-5 justify-content-center align-items-center mb-0 px-3'>
               <li className='font-weight-bol sub  '>
                 <p className='text-footer mb-0'>Descubre tu destino, abraza tu legado. </p>
               </li>

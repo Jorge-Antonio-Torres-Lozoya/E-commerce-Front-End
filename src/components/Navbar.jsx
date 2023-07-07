@@ -92,7 +92,7 @@ const Navbar = () => {
           <ul className=' me-auto mb-2 mb-lg-0 lista-categoria'>
             <li className='nav-item dropdown'>
               <a
-                className='nav-link dropdown-toggle text-white me-5 '
+                className='nav-link dropdown-toggle text-white me-2 '
                 href='#'
                 role='button'
                 data-bs-toggle='dropdown'
@@ -155,9 +155,9 @@ const Navbar = () => {
             </li>
           </ul>
           <form onSubmit={handleSubmit} className='d-flex search-form ' role='search'>
-            <div className='input-group-search'>
+            <div className='input-group-search me-2'>
               <input
-                className=' me-4 px-5 input-search focus-ring focus-ring-light'
+                className=' me-4 px-5 input-search focus-ring focus-ring-light px-4'
                 type='search'
                 placeholder='Busca tu producto'
                 aria-label='Search'
@@ -170,11 +170,11 @@ const Navbar = () => {
             </div>
           </form>
 
-          <ul className='tx-none me-4 ms-3 my-auto d-flex nav-links gap-4'>
+          <ul className='tx-none me-3  my-auto d-flex nav-links gap-5 '>
             {
             !isAuth
               ? <li className='item'><NavLink to='/login' className='text-decoration-none text-white'>Identificate</NavLink></li>
-              : <li className='item cerrar-sesion' onClick={logout}><NavLink to='/login' className='text-decoration-none text-white'>Cerrar Sesion</NavLink></li>
+              : <li className='item cerrar-sesion' onClick={logout}><NavLink to='/login' className='text-decoration-none text-white'>Cerrar Sesión</NavLink></li>
 
 }
             <li className='nav-item '>
