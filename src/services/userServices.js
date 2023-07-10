@@ -1,7 +1,6 @@
 import axios from 'axios'
 
-const BASE_URL = 'https://crazy-pink-petticoat.cyclic.app/'
-
+const BASE_URL = 'https://drab-erin-wombat-toga.cyclic.app/api/users'
 // Referencia: https://stackoverflow.com/questions/71989146/axios-instance-not-getting-the-token-from-local-storage-on-first-call-react-js
 
 axios.interceptors.request.use(
@@ -20,7 +19,7 @@ axios.interceptors.request.use(
   }
 )
 
-const registerUserServices = (data) => axios.post(`${BASE_URL}/signup`, data)
+const registerUserServices = (data) => axios.post(`${BASE_URL}/`, data)
 const loginUserServices = (data) => axios.post(`${BASE_URL}/login`, data)
 // const getSingleUser = (id) => axios.get(`${BASE_URL}/user/${id}`)
 
