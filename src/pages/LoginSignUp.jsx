@@ -1,5 +1,4 @@
 
-import { styled } from '@mui/material/styles'
 import AccountCircle from '@mui/icons-material/AccountCircle'
 import TextField from '@mui/material/TextField'
 import InputAdornment from '@mui/material/InputAdornment'
@@ -8,15 +7,13 @@ import EmailOutlined from '@mui/icons-material/EmailOutlined'
 import Visibility from '@mui/icons-material/Visibility'
 import VisibilityOff from '@mui/icons-material/VisibilityOff'
 import LockOutlined from '@mui/icons-material/LockOutlined'
-// import MenuItem from '@mui/material/MenuItem'
-// import FormControl from '@mui/material/FormControl'
-// import InputBase from '@mui/material/InputBase'
 import '../styles/loginSign.css'
 import { useNavigate } from 'react-router'
 import { AuthContext } from '../context/AuthContext'
-import { loginUserServices } from '../services/userServices'
+import { loginUserServices, registerUserServices } from '../services/userServices'
 import useForm from '../hooks/useForm'
 import React, { useContext, useMemo } from 'react'
+import { toast } from 'react-toastify'
 
 const LoginSignUp = () => {
   const [signIn, setSignIn] = React.useState(false)
@@ -32,14 +29,50 @@ const LoginSignUp = () => {
       console.log(result.data.token)
       if (result.status === 200) {
         loginUser(result.data.token)
+        console.log(result.data)
         navigate('/')
       }
     } catch (err) {
-      window.alert('Correo o contraseña incorecta')
+      toast.error(' Correo o contraseña incorrecta', {
+        position: 'top-center',
+        autoClose: 4000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'light'
+      })
       console.log('Ocurrio un erron en Login: ' + err.message)
     }
   }
+  const sendDataSignUp = async (data) => {
+    console.log(data)
+    if (!data.role) {
+      data.role = 'customer'
+    }
+    const result = await registerUserServices(data)
+    if (result.status === 201) {
+      toast.success(' Usuario registrado con éxito, favor de iniciar sesión', {
+        position: 'top-center',
+        autoClose: 4000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'light'
+      })
+    }
+
+    console.log(result.data)
+  }
   const { input, handleInputChange, handleSubmit } = useForm(sendData, {
+    email: '',
+    password: ''
+  })
+  const { input: signUpInput, handleInputChange: handleSignUpInputChange, handleSubmit: handleSignUpSubmit } = useForm(sendDataSignUp, {
+    name: '',
     email: '',
     password: ''
   })
@@ -83,23 +116,19 @@ const LoginSignUp = () => {
     setSignIn(false)
   }
 
-  // const toggle = (val) => {
-  //   setSignIn(val)
-  // }
-
-  const CssTextField = styled(TextField)({
-    '& .MuiOutlinedInput-root': {
-      '& fieldset': {
-        borderColor: '#E04B1E'
-      },
-      '&:hover fieldset': {
-        borderColor: '#FFAD00'
-      },
-      '&.Mui-focused fieldset': {
-        borderColor: '#2ec4b6'
-      }
-    }
-  })
+  // const CssTextField = styled(TextField)({
+  //   '& .MuiOutlinedInput-root': {
+  //     '& fieldset': {
+  //       borderColor: '#E04B1E'
+  //     },
+  //     '&:hover fieldset': {
+  //       borderColor: '#FFAD00'
+  //     },
+  //     '&.Mui-focused fieldset': {
+  //       borderColor: '#2ec4b6'
+  //     }
+  //   }
+  // })
   const inputPassword = {
     '& .MuiOutlinedInput-root': {
       '& fieldset': {
@@ -118,9 +147,9 @@ const LoginSignUp = () => {
     <div id='centro' className='Centro'>
       <div id='con' className='Container  container-responsive '>
         <div id='SignUp' className={`SignUpContainer ${!signIn ? 'SignUpContainer-active' : ''}`}>
-          <form id='form ' className='Form formSignUp'>
+          <form id='form ' className='Form formSignUp' onSubmit={handleSignUpSubmit}>
             <h1 className='Title mb-2'>Registrate</h1>
-            <CssTextField
+            <TextField
               id='custom-css-outlined-input' label='Nombre' variant='outlined' margin='normal' size='small' InputProps={{
                 startAdornment: (
                   <InputAdornment position='start'>
@@ -128,9 +157,13 @@ const LoginSignUp = () => {
                   </InputAdornment>
                 )
               }}
-              sx={inputStyle}
+              // sx={inputStyle}
+              name='name'
+              value={signUpInput.name}
+              onChange={handleSignUpInputChange}
+
             />
-            <CssTextField
+            <TextField
               label='Correo electrónico'
               variant='outlined'
               margin='normal'
@@ -140,6 +173,9 @@ const LoginSignUp = () => {
                 startAdornment: <EmailOutlined sx={{ color: '#009C78' }} />
               }}
               sx={inputStyle}
+              name='email'
+              value={signUpInput.email}
+              onChange={handleSignUpInputChange}
             />
 
             <TextField
@@ -168,6 +204,9 @@ const LoginSignUp = () => {
                 )
               }}
               sx={inputPassword}
+              name='password'
+              value={signUpInput.password}
+              onChange={handleSignUpInputChange}
 
             />
             <button className='Button'>Registrar</button>
