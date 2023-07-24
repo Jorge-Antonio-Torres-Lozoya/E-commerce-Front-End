@@ -72,13 +72,13 @@ const Navbar = () => {
 
   return (
     <nav className='navbar navbar-expand-lg navbar-color fixed-top '>
-      <div className='container-fluid  '>
+      <div className='container-fluid '>
         <Link className='navbar-brand text-white fs-2 py-1 mx-2 logo' to='/' onClick={resetSearch}>
           <img className='logo-tonal-nav mb-1' src={logo} alt='' />
         </Link>
 
         <button
-          className=' btn-nav'
+          className=' btn-nav me-3'
           type='button'
           data-bs-toggle='collapse'
           data-bs-target='#navbarSupportedContent'
@@ -86,7 +86,7 @@ const Navbar = () => {
           aria-expanded='false'
           aria-label='Toggle navigation'
         >
-          <i className='fa-solid fa-bars fa-lg nav-bars' />
+          <i className='fa-solid fa-bars fa-lg nav-bars ' />
         </button>
         <div className='collapse navbar-collapse container-collapse   ' id='navbarSupportedContent'>
           <ul className=' me-auto mb-2 mb-lg-0 lista-categoria'>
